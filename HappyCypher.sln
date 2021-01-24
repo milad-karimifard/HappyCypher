@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCypher", "src\HappyCypher\HappyCypher.csproj", "{3934E453-BA07-48C6-BD86-61271737CFE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E558BC6-FC82-46B1-ABD6-3410E37F590F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A368044F-5AF8-4B3C-B813-7178E2789EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCypher.Tests", "test\HappyCypher.Tests\HappyCypher.Tests.csproj", "{A5555753-D5D6-4A13-B92B-A2EE4C302DF4}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3934E453-BA07-48C6-BD86-61271737CFE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3934E453-BA07-48C6-BD86-61271737CFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3934E453-BA07-48C6-BD86-61271737CFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3934E453-BA07-48C6-BD86-61271737CFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5555753-D5D6-4A13-B92B-A2EE4C302DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5555753-D5D6-4A13-B92B-A2EE4C302DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5555753-D5D6-4A13-B92B-A2EE4C302DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5555753-D5D6-4A13-B92B-A2EE4C302DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3934E453-BA07-48C6-BD86-61271737CFE8} = {0E558BC6-FC82-46B1-ABD6-3410E37F590F}
+		{A5555753-D5D6-4A13-B92B-A2EE4C302DF4} = {A368044F-5AF8-4B3C-B813-7178E2789EAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB8EBA7-D1B5-4F8D-A4F6-2E9DD2821EBD}
