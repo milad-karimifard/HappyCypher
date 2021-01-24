@@ -1,4 +1,5 @@
 ﻿using HappyCypher.Domain.Exception;
+using HappyCypher.Domain.Interface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace HappyCypher.Domain.API
 {
-    public class HappyCypherApiClient
+    public class HappyCypherApiClient : IHappyCypherApiClient
     {
         private HttpClient _client { get; set; }
 
         public HappyCypherApiClient(HttpClient client)
         {
-            ConfigureClient(_client);
+            ConfigureClient(client);
         }
 
         #region private method
