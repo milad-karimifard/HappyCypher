@@ -29,11 +29,34 @@
 
 2. Use Like example
 
-   example ; 
+   example : 
 
 ```c#
 blockchain.SetToken("Your TOKEN");
 var result = await blockchain.GetChain(ResourceType.BitCoinMain);
 ```
 
- 
+ <ul>
+  <li>
+    <h4>GetBlockHash(ResourceType resourceType, string blockHash)</h2>
+      <p>If you want more data on a particular block, you can use the Block Hash endpoint.The returned object contains information about the block, including its height, the total amount of satoshis transacted within it, the number of transactions in it, transaction hashes listed in the canonical order in which they appear in the block, and more</p>
+      <br>
+     </li>
+</ul>
+
+​	Usage : 
+
+1. Create a instance of Blockchain (with DI or manually)
+
+2. Use Like example. for this example we use this data
+
+   blockHash : 0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412
+
+   example : 
+
+
+```c#
+ blockchain.SetToken("Your TOKEN");
+ var result = await blockchain.GetBlockHash(ResourceType.BitCoinMain,"0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412");
+```
+

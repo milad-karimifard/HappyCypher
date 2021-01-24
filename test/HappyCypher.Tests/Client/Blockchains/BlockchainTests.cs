@@ -28,6 +28,14 @@ namespace HappyCypher.Tests.Client.Blockchains
             Assert.NotNull(result);
         }
 
+        [Fact]
+        public async Task GetBlockHash_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetBlockHash(ResourceType.BitCoinMain, "0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412");
+            Assert.NotNull(result);
+        }
+
         private void SetToken()
         {
             testCase.SetToken(TOKEN);

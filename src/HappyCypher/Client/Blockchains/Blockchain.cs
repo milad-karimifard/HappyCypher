@@ -3,6 +3,7 @@ using HappyCypher.Client.Utilities.Enums;
 using HappyCypher.Domain.API;
 using HappyCypher.Domain.Interface;
 using HappyCypher.Models.Blockchain;
+using HappyCypher.Models.Blockchains;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,12 +24,26 @@ namespace HappyCypher.Client.Blockchains
         public void SetToken(string token) => TOKEN = token;
 
 
-        public async Task<Blockchain> GetChain(ResourceType resourceType)
+        public async Task<BlockchainResult> GetChain(ResourceType resourceType)
+        {
+            string url = EndPoints.GetUrl(resourceType, "v1");
+            ApplyToken(url);
+            return await _client.GetAsync<BlockchainResult>(url);
+        }
+
+        public async Task<BlockHashResult> GetBlockHash(ResourceType resourceType, string blockHash)
         {
             string url = EndPoints.GetUrl(resourceType, "v1");
 
-            return await _client.GetAsync<Blockchain>(url);
+            url += $"/blocks/{blockHash}";
+            ApplyToken(url);
+
+            return await _client.GetAsync<BlockHashResult>(url);
         }
-    
+
+        private void ApplyToken(string url)
+        {
+            url += $"?token={TOKEN}";
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HappyCypher.Models.Blockchain
 {
-    public class Blockchain
+    public class BlockchainResult
     {
         [JsonProperty("name")]
         public string Name { get; set; }
