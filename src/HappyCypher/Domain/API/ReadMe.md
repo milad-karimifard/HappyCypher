@@ -2,7 +2,7 @@
 
 
 
-### Usage:
+### Setup:
 
 ```c#
 // Startup.cs
