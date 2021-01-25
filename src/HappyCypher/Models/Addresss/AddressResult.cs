@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HappyCypher.Models.Addresss
 {
-    public class AddressBalanceResult
+    public class AddressResult
     {
         [JsonProperty("address")]
         public string Address { get; set; }

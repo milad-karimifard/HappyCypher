@@ -30,14 +30,28 @@
 
 2. Use Like example
 
-   example : 
 
 ```c#
 address.SetToken("Your TOKEN");
 var result = await address.GetAddressBalance(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
 ```
 
+<ul>
+  <li>
+    <h4>GetAddress(ResourceType resourceType, string address)</h2>
+    <p>The default Address Endpoint strikes a balance between speed of response and data on Addresses. It returns more information about an address' transactions than the Address Balance Endpoint but doesn't return full transaction information (like the Address Full Endpoint).
+      </p>
+      </ul>
 
+Usage : 
 
+1. Create a instance of Address (with DI or manually)
 
-​	
+2. Use Like example
+
+   ```c#
+   address.SetToken("Your TOKEN");
+   var result = await address.GetAddress(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
+   ```
+
+   

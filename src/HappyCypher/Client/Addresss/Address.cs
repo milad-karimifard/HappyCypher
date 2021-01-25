@@ -21,14 +21,24 @@ namespace HappyCypher.Client.Addresss
 
         public void SetToken(string token) => TOKEN = token;
 
-        public async Task<AddressBalanceResult> GetAddressBalance(ResourceType resourceType,string address)
+        public async Task<AddressResult> GetAddressBalance(ResourceType resourceType,string address)
         {
             string url = EndPoints.GetUrl(resourceType, "v1");
 
             url += $"/addrs/{address}/balance";
             ApplyToken(url);
             
-            return await _client.GetAsync<AddressBalanceResult>(url);
+            return await _client.GetAsync<AddressResult>(url);
+        }
+
+        public async Task<AddressResult> GetAddress(ResourceType resourceType, string address)
+        {
+            string url = EndPoints.GetUrl(resourceType, "v1");
+
+            url += $"/addrs/{address}";
+            ApplyToken(url);
+
+            return await _client.GetAsync<AddressResult>(url);
         }
 
         private void ApplyToken(string url)

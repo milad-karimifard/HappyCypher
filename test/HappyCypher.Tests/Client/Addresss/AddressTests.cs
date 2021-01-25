@@ -21,10 +21,18 @@ namespace HappyCypher.Tests.Client.Addresss
         }
 
         [Fact]
-        public async Task GetChain_Should_Be_Fine()
+        public async Task GetAddressBalance_Should_Be_Fine()
         {
             SetToken();
             var result = await testCase.GetAddressBalance(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task GetAddress_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetAddress(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
             Assert.NotNull(result);
         }
 
