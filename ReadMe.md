@@ -16,9 +16,15 @@ C# API wrapper for BlockCypher.com
 
     https://github.com/milad-karimifard/HappyCypher/tree/master/src/HappyCypher/Client/Blockchains
 
-3. Address Methods Usage
+3. Address Methods Usage 
 
    https://github.com/milad-karimifard/HappyCypher/tree/master/src/HappyCypher/Client/Addresss
+
+4. Transaction Methods Usage 
+
+   https://github.com/milad-karimifard/HappyCypher/tree/master/src/HappyCypher/Client/Transactions
+
+   
 
    
 

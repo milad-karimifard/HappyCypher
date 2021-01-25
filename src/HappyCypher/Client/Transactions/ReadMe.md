@@ -39,6 +39,6 @@ int value = 10000;
 
 transaction.SetToken("Your TOKEN");
 
-var result = await transaction.CreateTransaction(ResourceType.BitCoinMain, fromAddress, toAddress, value);
+var result = await transaction.CreateTransaction(ResourceType.BitCoinTest, fromAddress, toAddress, value);
 ```
 
