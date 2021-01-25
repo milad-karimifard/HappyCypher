@@ -60,6 +60,7 @@ namespace HappyCypher.Domain.API
         private void HandleRequestStatus(HttpStatusCode statusCode)
         {
             if (statusCode == HttpStatusCode.OK) return;
+            if (statusCode == HttpStatusCode.Created) return;
 
             if (statusCode == HttpStatusCode.TooManyRequests) throw new CypherRateLimitException();
             else throw new HttpRequestException(statusCode.ToString());
