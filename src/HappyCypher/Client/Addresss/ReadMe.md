@@ -55,3 +55,23 @@ Usage :
    ```
 
    
+
+<ul>
+  <li>
+    <h4>GetAddressFull(ResourceType resourceType, string address)</h2>
+    <p>The Address Full Endpoint returns all information available about a particular address, including an array of complete transactions instead of just transaction inputs and outputs. Unfortunately, because of the amount of data returned, it is the slowest of the address endpoints, but it returns the most detailed data record.
+      </p>
+      </ul>
+
+Usage :
+
+1. Create a instance of Address (with DI or manually)
+
+2. Use Like example
+
+   ```c#
+   address.SetToken("Your TOKEN");
+   var result = await address.GetAddressFull(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
+   ```
+
+   

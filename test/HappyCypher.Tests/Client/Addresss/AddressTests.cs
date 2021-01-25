@@ -36,6 +36,14 @@ namespace HappyCypher.Tests.Client.Addresss
             Assert.NotNull(result);
         }
 
+        [Fact]
+        public async Task GetAddressFull_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetAddressFull(ResourceType.BitCoinMain, "bc1qjr9y78heau4kmwl85pzzw89z50ccsv9w9qwu2p");
+            Assert.NotNull(result);
+        }
+
         private void SetToken()
         {
             testCase.SetToken(TOKEN);

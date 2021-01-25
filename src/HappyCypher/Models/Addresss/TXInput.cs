@@ -26,7 +26,7 @@ namespace HappyCypher.Models.Addresss
         public List<string> Addresses { get; set; }
 
         [JsonProperty("sequence")]
-        public int Sequence { get; set; }
+        public Int64 Sequence { get; set; }
 
         [JsonProperty("age")]
         public int Age { get; set; }

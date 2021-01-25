@@ -41,6 +41,16 @@ namespace HappyCypher.Client.Addresss
             return await _client.GetAsync<AddressResult>(url);
         }
 
+        public async Task<AddressResult> GetAddressFull(ResourceType resourceType, string address)
+        {
+            string url = EndPoints.GetUrl(resourceType, "v1");
+
+            url += $"/addrs/{address}/full";
+            ApplyToken(url);
+
+            return await _client.GetAsync<AddressResult>(url);
+        }
+
         private void ApplyToken(string url)
         {
             url += $"?token={TOKEN}";
