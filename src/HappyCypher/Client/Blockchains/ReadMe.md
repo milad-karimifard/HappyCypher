@@ -1,4 +1,4 @@
-# Blockchain Method : 
+# Blockchain Methods : 
 
 <ul>
   <li>
