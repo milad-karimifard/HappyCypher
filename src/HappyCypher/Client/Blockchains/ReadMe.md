@@ -52,7 +52,6 @@ var result = await blockchain.GetChain(ResourceType.BitCoinMain);
 
    blockHash : 0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412
 
-   example : 
 
 
 ```c#
@@ -60,3 +59,23 @@ var result = await blockchain.GetChain(ResourceType.BitCoinMain);
  var result = await blockchain.GetBlockHash(ResourceType.BitCoinMain,"0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412");
 ```
 
+ <ul>
+  <li>
+    <h4>GetBlockHeight(ResourceType resourceType, long blockHeight, int txStart = int.MinValue, int limit = int.MinValue)</h2>
+      <p>You can query for information on a block using its height, using the same resource but with a different variable type. blockHeight is an integer representing the height of the block you're interested in querying</p>
+      <br>
+     </li>
+</ul>
+
+​	Usage :
+
+1.  Create a instance of Blockchain (with DI or manually)
+
+2. Use Like example. for this example we use this data
+
+   blockHeight : 294322
+
+   ```c#
+   blockchain.SetToken("Your TOKEN");
+    var result = await blockchain.GetBlockHeight(ResourceType.BitCoinMain, 294322);
+   ```

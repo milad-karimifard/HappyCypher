@@ -6,6 +6,7 @@ using HappyCypher.Models.Blockchain;
 using HappyCypher.Models.Blockchains;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,27 @@ namespace HappyCypher.Client.Blockchains
 
             url += $"/blocks/{blockHash}";
             ApplyToken(url);
+
+            return await _client.GetAsync<BlockHashResult>(url);
+        }
+
+        public async Task<BlockHashResult> GetBlockHeight(ResourceType resourceType, long blockHeight, int txStart = int.MinValue, int limit = int.MinValue)
+        {
+            string url = EndPoints.GetUrl(resourceType, "v1");
+
+            url += $"/blocks/{blockHeight}";
+
+            if (txStart != int.MinValue)
+            {
+                url += $"?txstart={txStart}";
+            }
+
+            if (limit != int.MinValue)
+            {
+                bool hasFilter = url.Contains("?txstart=");
+
+                url += hasFilter ? $"&limit={limit}" : $"?limit={limit}";
+            }
 
             return await _client.GetAsync<BlockHashResult>(url);
         }

@@ -36,6 +36,22 @@ namespace HappyCypher.Tests.Client.Blockchains
             Assert.NotNull(result);
         }
 
+        [Fact]
+        public async Task GetBlockHeight_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetBlockHeight(ResourceType.BitCoinMain, 294322);
+            Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task GetBlockHeight_With_Parameter_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetBlockHeight(ResourceType.BitCoinMain, 294322,1,1);
+            Assert.NotNull(result);
+        }
+
         private void SetToken()
         {
             testCase.SetToken(TOKEN);
