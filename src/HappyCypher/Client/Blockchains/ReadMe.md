@@ -50,13 +50,13 @@ var result = await blockchain.GetChain(ResourceType.BitCoinMain);
 
 2. Use Like example. for this example we use this data
 
-   blockHash : 0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412
+   blockHash : "0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412"
 
 
 
 ```c#
- blockchain.SetToken("Your TOKEN");
- var result = await blockchain.GetBlockHash(ResourceType.BitCoinMain,"0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412");
+blockchain.SetToken("Your TOKEN");
+var result = await blockchain.GetBlockHash(ResourceType.BitCoinMain,"0000000000000000189bba3564a63772107b5673c940c16f12662b3e8546b412");
 ```
 
  <ul>
@@ -77,5 +77,27 @@ var result = await blockchain.GetChain(ResourceType.BitCoinMain);
 
    ```c#
    blockchain.SetToken("Your TOKEN");
-    var result = await blockchain.GetBlockHeight(ResourceType.BitCoinMain, 294322);
+   var result = await blockchain.GetBlockHeight(ResourceType.BitCoinMain, 294322);
    ```
+
+ <ul>
+  <li>
+    <h4>GetFeature(ResourceType resourceType, string name)</h2>
+      <p>If you're curious about the adoption of upgrade features on a blockchain, you can use this endpoint to get some information about its state on the network.</p>
+      <br>
+     </li>
+</ul>
+
+​	Usage : 
+
+1. Create a instance of Blockchain (with DI or manually)
+
+2. Use Like example. for this example we use this data
+
+   name : "bip65"
+
+   ```c#
+   blockchain.SetToken("Your TOKEN");
+   var result = await blockchain.GetFeature(ResourceType.BitCoinMain, "bip65");
+   ```
+

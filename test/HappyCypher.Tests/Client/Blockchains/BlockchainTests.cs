@@ -52,6 +52,14 @@ namespace HappyCypher.Tests.Client.Blockchains
             Assert.NotNull(result);
         }
 
+        [Fact]
+        public async Task GetFeature_Should_Be_Fine()
+        {
+            SetToken();
+            var result = await testCase.GetFeature(ResourceType.BitCoinMain, "bip65");
+            Assert.NotNull(result);
+        }
+
         private void SetToken()
         {
             testCase.SetToken(TOKEN);

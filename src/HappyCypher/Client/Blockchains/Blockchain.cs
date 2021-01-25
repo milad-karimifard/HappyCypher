@@ -63,6 +63,16 @@ namespace HappyCypher.Client.Blockchains
             return await _client.GetAsync<BlockHashResult>(url);
         }
 
+        public async Task<FeatureResult> GetFeature(ResourceType resourceType, string name)
+        {
+            string url = EndPoints.GetUrl(resourceType, "v1");
+
+            url += $"/feature/{name}";
+            ApplyToken(url);
+
+            return await _client.GetAsync<FeatureResult>(url);
+        }
+
         private void ApplyToken(string url)
         {
             url += $"?token={TOKEN}";
